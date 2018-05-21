@@ -51,9 +51,12 @@ var menuData = {
 };
 
 $(function() {
+
+    /* Menu principale */
     var menuHbs = $("#"+menuData.template).html(),
         menuTpl = Handlebars.compile(menuHbs);
     menuData.items.forEach(function(item) {
         $("#"+menuData.id).append(menuTpl(item));
     });
+
 });

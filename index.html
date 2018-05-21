@@ -29,7 +29,7 @@
             </li>
         </script>
     </head>
-    <body>
+    <body class="d-flex flex-column">
         <header>
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -81,7 +81,32 @@
             </nav>
 
         </header>
-        <main></main>
-        <footer></footer>
+
+        <main class="container d-flex flex-grow-1">
+            <div class="row flex-grow-1">
+                <div class="col-12 col-md-4 order-md-last">
+                    <div class="row">
+                        <div class="col-12">Paesi</div>
+                        <div class="col-12">Legenda</div>
+                        <div class="col-12">Descrizione</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 order-md-first d-flex flex-column">
+                    <div class="row flex-grow-1">
+                        <div id="map-container" class="col-12">Mappa</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Barre</div>
+                        <div class="col-6">Paesi</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                &copy; DeAgostini 2018
+            </nav>
+        </footer>
     </body>
 </html>
