@@ -52,11 +52,28 @@ var menuData = {
 
 $(function() {
 
-    /* Menu principale */
+    /* Menu principale costruito in runtime mediante handlebars */
     var menuHbs = $("#"+menuData.template).html(),
         menuTpl = Handlebars.compile(menuHbs);
     menuData.items.forEach(function(item) {
         $("#"+menuData.id).append(menuTpl(item));
     });
+
+    /* Mappa */
+    var map = L.map('map-container').setView([51.505, -0.09], 3);
+
+    /** Layer raster di sfondo da openstreetmap **/
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    /** Confini nazionali del mondo scaricati da https://geojson-maps.ash.ms/ **/
+    var geoLayer = L.geoJSON.ajax("./geo/world.json", {
+        stroke: true,
+        fill: true,
+        color: '#000',
+        fillColor: '#fff',
+        fillOpacity: 0.1
+    }).addTo(map);
 
 });
