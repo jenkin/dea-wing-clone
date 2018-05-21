@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>DeA Wing Clone</title>
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.0.0/css/flag-icon.min.css">
         <link rel="stylesheet" type="text/css" href="./css/index.css">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@4.0.11/dist/handlebars.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
         <script src="./js/index.js"></script>
+
+        <script id="menu-item-template" type="text/x-handlebars-template">
+            <li class="nav-item m-1">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdown{{id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{name}}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdown{{id}}">
+                        {{#each items}}
+                        <a class="dropdown-item" href="#">{{name}}</a>
+                        {{/each}}
+                    </div>
+                </div>
+            </li>
+        </script>
     </head>
     <body>
         <header>
+
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">DeA Wing <small class="ml-5">DeAgostini Geografia</small></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="mainNavbar">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="?lang=en">
                                 <span class="flag-icon flag-icon-gb"></span>
                                 <span>English</span>
@@ -32,6 +55,31 @@
                     </form>
                 </div>
             </nav>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuNavbar">
+
+                    <ul id="menu" class="navbar-nav mr-auto">
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item m-1">
+                            <a class="btn btn-primary" href="?page=countries" role="button">Schede Paesi</a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="btn btn-primary" href="?page=maps" role="button">Mappe</a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="btn btn-primary" href="?page=earth" role="button">Terra-Record</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
         </header>
         <main></main>
         <footer></footer>
