@@ -2,10 +2,38 @@
 <html>
     <head>
         <title>DeA Wing Clone</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.0.0/css/flag-icon.min.css">
         <link rel="stylesheet" type="text/css" href="./css/index.css">
         <script src="./js/index.js"></script>
     </head>
     <body>
-        <h1>DeA Wing Clone</h1>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">DeA Wing <small class="ml-5">DeAgostini Geografia</small></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="?lang=en">
+                                <span class="flag-icon flag-icon-gb"></span>
+                                <span>English</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="?action=signin">Accedi</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0 ml-auto">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Cerca..." aria-label="Cerca">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <main></main>
+        <footer></footer>
     </body>
 </html>
