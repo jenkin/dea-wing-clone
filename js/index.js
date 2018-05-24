@@ -26,6 +26,8 @@ $(function() {
         "./data/listaRANK_100077_2018.json",
         function(geoData) { // Funzione di callback con il contenuto del json
 
+            /*** GESTIONE DELLA MAPPA ***/
+
             // Calcolo il valore massimo del PIL tra tutti i paesi, trasformando opportunamente la stringa originale in un numero intero
             var maxValue = Math.max.apply(
                 null,
@@ -95,6 +97,17 @@ $(function() {
 
             })
             .addTo(map);
+
+            /*** FINE MAPPA ***/
+
+
+            /*** GESTIONE DELLE CARD ***/
+            var cardHbs = $("#card-template").html(), // Leggo il template sotto forma di stringa
+                cardTpl = Handlebars.compile(cardHbs); // Lo compilo (menuTpl è una funzione)
+            geoData.lista.slice(0,4).forEach(function(item) { // Per ogni elemento (bottone) del menu
+                $("#card-container").append(cardTpl(item)); // Creo un elemento del menu
+            });
+            /*** FINE CARD ***/
 
         }
     );

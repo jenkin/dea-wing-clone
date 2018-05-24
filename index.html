@@ -31,6 +31,19 @@
                 </div>
             </li>
         </script>
+
+        <script id="card-template" type="text/x-handlebars-template">
+            <div class="col-12 col-md-3">
+                <div class="card">
+                    <span class="flag-icon flag-icon-{{iso}} w-100"></span>
+                    <div class="card-body">
+                        <h5 class="card-title">{{nazione}}</h5>
+                        <p class="card-text"><span class="country-measure">Superficie</span> (<span class="country-unit">kmq</span>): <span class="country-value">{{superficie}}</span></p>
+                        <p class="card-text"><span class="country-measure">Popolazione</span>: <span class="country-value">{{popolazione}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </script>
         
     </head>
     <body class="d-flex flex-column">
@@ -100,18 +113,9 @@
                         <div id="map-container" class="col-12"></div>
                     </div>
                     <div class="row">
-                        <div class="col-6">Barre</div>
-                        <div class="col-6">
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                    <div class="card">
-                                        <span class="flag-icon flag-icon-gb w-100"></span>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Regno Unito</h5>
-                                            <p class="card-text"><span class="country-measure">Superficie</span> (<span class="country-unit">kmq</span>): <span class="country-value">11 627</span></p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="col-2">Barre</div>
+                        <div class="col-10">
+                            <div id="card-container" class="row">
                             </div>
                         </div>
                     </div>
